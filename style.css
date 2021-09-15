@@ -1,0 +1,97 @@
+body{
+    background: linear-gradient(90deg, #d0a 20%, #55c 100%);
+}
+
+#all { 
+    text-align: right;
+    margin-right: 120px;
+    margin-top: 15px;
+}
+
+#all h1{
+    float: left;
+    font-family: Arial;
+    color: white;
+    font-weight: 900;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+#text { 
+    padding: 6px;
+    height: 20px;
+    width: 250px;
+    border-width: 0px;
+    border-radius: 5px;
+    border-color: white;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#submitButton{
+    height: 32px;
+    width: 70px;
+    border-width: 0px;
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: lightgrey;
+    margin-left: -10px;
+}
+
+.toDoList {
+    margin-top: 30px;    
+
+}
+
+.toDoList li{
+    margin: auto;
+    background-color: white;
+
+    padding: 15px;
+    width: 450px;
+    font-size: 20px;
+    list-style-type: none;
+    text-align: left;
+    font-family: Arial;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+    margin-bottom: 10px;
+}
+.toDoList #listCheckBox{
+    margin-top: 5px;
+    float: right;
+    border: none;
+
+}
+input[type="checkbox"] {
+appearance: none;
+-webkit-appearance: none;
+height: 15px;
+width: 15px;
+background-color: gray;
+
+}
+
+input[type="checkbox"]:after {
+content: "\f00c";
+font-weight: 700;
+font-family: "Font Awesome 5 Free";
+font-size: 11px;
+color: white;
+padding-left: 1.8px;
+/* display: none; */
+}
+
+/*input[type="checkbox"]:hover {
+    background-color: lightgray;
+
+}*/
+input[type="checkbox"]:checked {
+ background-color: green;
+}    
+input[type="checkbox"]:checked:after {
+/* display: block; */
+
+}    
+
