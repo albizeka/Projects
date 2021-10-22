@@ -221,25 +221,25 @@
 
 <script>
 
-    var i = 0;
 
     function addQuestion() {
 
-        var questions = ["What is a constructor in JavaScript?", "What are four ways to create objects in JavaScript?"]
+        var t = document.getElementById('table');
 
-        var x = document.getElementById("question");
-
-        x.value = questions[i++];
-
-        if (i > questions.length - 1) {
-            i = 0;
+        if (t.style.display == "none") {
+            t.style.display = "block";
+        }
+        else {
+            t.style.display = "none";
         }
 
-
-    };
+    }
 
 
     function Save() {
+        var table = document.getElementById("table");
+        table.style.display = "none";
+
         var t = document.createElement("div");
         t.id = "tables";
         document.body.appendChild(t);
@@ -270,47 +270,21 @@
         t1.appendChild(btn23);
 
 
-        /*    if (t1.display = "none") {
-                t1.display = "inline";
-            }
-            //  console.log(answer); */
 
-    /*    var t2 = document.createElement("div");
-        t2.id = "second-table";
-        t.appendChild(t2);
-        var h1 = document.createElement("h3");
-        h1.innerText = ""
-        t2.appendChild(h1);
 
-        var link1 = document.createElement("button");
-        link1.innerText = "Show/Hide Answer";
-        link1.id = "second-link";
-        t2.appendChild(link1);
 
-        var btn45 = document.createElement("div");
-        btn45.id = "buttons34";
 
-        var btn4 = document.createElement("button");
-        btn4.innerText = "EDIT";
-        btn4.id = "btn5";
-        btn45.appendChild(btn4);
+        var question = document.getElementById("question");
 
-        var btn5 = document.createElement("button");
-        btn5.innerText = "DELETE";
-        btn5.id = "btn6";
-        btn45.appendChild(btn5);
-        t2.appendChild(btn45); */
+        h.textContent = question.value;
+        question.value = "";
 
-        
-        var question = document.getElementById("question").value;
 
-        h.textContent = question;
-
-      //  console.log(question);
+        //  console.log(question);
     }
-        
 
-    
+
+
 
 
 
