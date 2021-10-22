@@ -128,24 +128,30 @@
         }
 
         #btn3 {
-            margin-left: -11px;
+            margin-left: -31px;
             border: solid 1.5px green;
             padding-left: 8.5px;
             padding-right: 8.5px;
-            padding-top: 5.5px;
+            padding-top: 4.5px;
             padding-bottom: 5.5px;
             border-radius: 3.5px;
+            width: 65px;
+            height: 27px;
+            margin-top: 5px;
 
         }
 
         #btn4 {
-            margin-left: 91px;
-            padding-left: 8.5px;
-            padding-right: 8.5px;
-            padding-top: 5.5px;
-            padding-bottom: 5.5px;
+            margin-right: -18px;
             border: solid 1.5px red;
+            padding-left: 5.5px;
+            padding-right: 8.5px;
+            padding-top: 4.5px;
+            padding-bottom: 5.5px;
             border-radius: 3.5px;
+            width: 65px;
+            height: 27px;
+            margin-top: 5px;
 
 
         }
@@ -210,24 +216,6 @@
         </div>
     </div>
 
-    <div id="tables">
-        <div id="first-table">
-            <h3>What is a constructor in JavaScript?</h3>
-            <button id="first-link" onclick="ShowHide()">Show/Hide Answer</button>
-            <div id="buttons34">
-                <button id="btn3" onclick="Edit()">EDIT</button>
-                <button id="btn4" onclick="Edit()">DELETE</button>
-            </div>
-        </div>
-        <div id="second-table">
-            <h3>What are four ways to create objects in JavaScript?</h3>
-            <button id="second-link" onclick="ShowHide2()">Show/Hide Answer</button>
-            <div id="buttons34">
-                <button id="btn5" onclick="Edit2()">EDIT</button>
-                <button id="btn6" onclick="Delete2()">DELETE</button>
-            </div>
-        </div>
-    </div>
 
 </body>
 
@@ -250,34 +238,72 @@
 
     };
 
-    var answer = document.getElementById("answer");
-    var text = document.createElement("input");
 
     function Save() {
+        var t = document.createElement("div");
+        t.id = "tables";
+        document.body.appendChild(t);
+        var t1 = document.createElement("div");
+        t1.id = "first-table";
+        t.appendChild(t1);
+        var h = document.createElement("h3");
+        h.innerText = "What Is A Constructor In JavaScript?"
+        t1.appendChild(h);
 
-        text.type = "text";
-        answer.value = text.value;
+        var link = document.createElement("button");
+        link.innerText = "Show/Hide Answer";
+        link.id = "first-link";
+        t1.appendChild(link);
 
-        //  console.log(a);
+        var btn23 = document.createElement("div");
+        btn23.id = "buttons34";
 
-        if (answer.display == "inline") {
-            text.display = "inline";
-            answer.display = "none";
-        }
+        var btn2 = document.createElement("button");
+        btn2.innerText = "EDIT";
+        btn2.id = "btn3";
+        btn23.appendChild(btn2);
+
+        var btn3 = document.createElement("button");
+        btn3.innerText = "DELETE";
+        btn3.id = "btn4";
+        btn23.appendChild(btn3);
+        t1.appendChild(btn23);
+
+
+        /*    if (t1.display = "none") {
+                t1.display = "inline";
+            }
+            //  console.log(answer); */
+
+        var t2 = document.createElement("div");
+        t2.id = "second-table";
+        t.appendChild(t2);
+        var h1 = document.createElement("h3");
+        h1.innerText = "What Are Four Ways To Create Objects In JavaScript?"
+        t2.appendChild(h1);
+
+        var link1 = document.createElement("button");
+        link1.innerText = "Show/Hide Answer";
+        link1.id = "second-link";
+        t2.appendChild(link1);
+
+        var btn45 = document.createElement("div");
+        btn45.id = "buttons34";
+
+        var btn4 = document.createElement("button");
+        btn4.innerText = "EDIT";
+        btn4.id = "btn5";
+        btn45.appendChild(btn4);
+
+        var btn5 = document.createElement("button");
+        btn5.innerText = "DELETE";
+        btn5.id = "btn6";
+        btn45.appendChild(btn5);
+        t2.appendChild(btn45);
+
+        var answer = document.getElementById("answer");
+
         
-    }
-
-
-    function ShowHide() {
-        
-        text.type = "text";
-        answer.value = text.value;
-
-        if (text.display == "inline") {
-            answer.display = "inline";
-            text.display = "none";
-        }
-
 
     }
 
