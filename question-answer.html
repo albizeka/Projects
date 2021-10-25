@@ -225,9 +225,11 @@
     function addQuestion() {
 
         var t = document.getElementById('table');
+        var question = document.getElementById("question");
 
         if (t.style.display == "none") {
             t.style.display = "block";
+            
         }
         else {
             t.style.display = "none";
@@ -238,6 +240,7 @@
 
     function Save() {
         var table = document.getElementById("table");
+
         table.style.display = "none";
 
         var t = document.createElement("div");
@@ -247,13 +250,14 @@
         t1.id = "first-table";
         t.appendChild(t1);
         var h = document.createElement("h3");
-        h.textContent = "Ardit"
+        h.textContent = ""
         t1.appendChild(h);
 
         var link = document.createElement("button");
         link.innerText = "Show/Hide Answer";
         link.id = "first-link";
         t1.appendChild(link);
+        link.onclick = "showHideAnswer()";
 
         var btn23 = document.createElement("div");
         btn23.id = "buttons34";
@@ -275,14 +279,22 @@
 
 
         var question = document.getElementById("question");
-
         h.textContent = question.value;
-        question.value = "";
 
+        question.value = "";
+        
+        var answer = document.getElementById("answer");
+        answer.value = "";
 
         //  console.log(question);
-    }
+        
 
+}
+
+
+    
+
+    
 
 
 
