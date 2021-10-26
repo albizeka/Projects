@@ -82,7 +82,7 @@
             border-radius: 3px;
         }
 
-        #tables {
+        .tables {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -93,7 +93,7 @@
 
         }
 
-        #first-table {
+        .first-table {
             margin-left: 40px;
             width: 220px;
             height: 153px;
@@ -103,19 +103,22 @@
 
         }
 
-        #second-table {
+     /*   #second-table {
             margin-left: 25px;
             width: 220px;
             height: 173px;
             border: solid lightgray 1.4px;
             padding-left: 12px;
+        } 
+        */
+
+        .titleQuestion {
+            margin-top: 20px;
+            font-weight: bold;      
+        
         }
 
-        h3 {
-            margin-top: 12px;
-        }
-
-        #buttons34 {
+        .EditDelete {
             margin-top: 16px;
             display: flex;
             flex-direction: row;
@@ -127,7 +130,7 @@
 
         }
 
-        #btn3 {
+        .btnEdit {
             margin-left: -31px;
             border: solid 1.5px green;
             padding-left: 8.5px;
@@ -138,10 +141,10 @@
             width: 65px;
             height: 27px;
             margin-top: 5px;
-
+                                                
         }
 
-        #btn4 {
+        .btnDelete {
             margin-right: -18px;
             border: solid 1.5px red;
             padding-left: 5.5px;
@@ -156,7 +159,7 @@
 
         }
 
-        #btn5 {
+     /*   #btn5 {
             margin-left: -11px;
             border: solid 1.5px green;
             padding-left: 8.5px;
@@ -176,21 +179,21 @@
             border: solid 1.5px red;
             border-radius: 3.5px;
 
+                                                            
+        } */
 
-        }
-
-        #first-link {
+        .ShowHide {
             text-decoration-line: none;
             border: none;
             background-color: white;
         }
 
-        #second-link {
+     /*   #second-link {
             text-decoration-line: none;
             border: none;
             background-color: white;
 
-        }
+        } */
     </style>
 </head>
 
@@ -224,15 +227,14 @@
 
     function addQuestion() {
 
-        var t = document.getElementById('table');
-        var question = document.getElementById("question");
+        var table = document.getElementById("table");
 
-        if (t.style.display == "none") {
-            t.style.display = "block";
+        if (table.style.display == "none") {
+            table.style.display = "block";
             
         }
         else {
-            t.style.display = "none";
+            table.style.display = "none";
         }
 
     }
@@ -240,46 +242,43 @@
 
     function Save() {
         var table = document.getElementById("table");
-
+        
         table.style.display = "none";
 
-        var t = document.createElement("div");
-        t.id = "tables";
-        document.body.appendChild(t);
-        var t1 = document.createElement("div");
-        t1.id = "first-table";
-        t.appendChild(t1);
-        var h = document.createElement("h3");
-        h.textContent = ""
-        t1.appendChild(h);
+        var divOne = document.createElement("div");
+        divOne.classList.add("tables");
+        document.body.appendChild(divOne);
+        var outerDiv = document.createElement("div");
+        outerDiv.classList.add("first-table");
+        divOne.appendChild(outerDiv);
+        
+        var question2 = document.createElement("p");
+        question2.classList.add("titleQuestion");
+        question2.textContent = "";
+        outerDiv.appendChild(question2);
 
-        var link = document.createElement("button");
-        link.innerText = "Show/Hide Answer";
-        link.id = "first-link";
-        t1.appendChild(link);
-        link.onclick = "showHideAnswer()";
+        var btnShowHide = document.createElement("button");
+        btnShowHide.innerText = "Show/Hide Answer";
+        btnShowHide.classList.add("ShowHide");
+        outerDiv.appendChild(btnShowHide);
 
-        var btn23 = document.createElement("div");
-        btn23.id = "buttons34";
+        var btnEditDelete = document.createElement("div");
+        btnEditDelete.classList.add("EditDelete");
+        outerDiv.appendChild(btnEditDelete);
 
-        var btn2 = document.createElement("button");
-        btn2.innerText = "EDIT";
-        btn2.id = "btn3";
-        btn23.appendChild(btn2);
+        var btnEdit = document.createElement("button");
+        btnEdit.innerText = "EDIT";
+        btnEdit.classList.add("btnEdit");
+        btnEditDelete.appendChild(btnEdit);
 
-        var btn3 = document.createElement("button");
-        btn3.innerText = "DELETE";
-        btn3.id = "btn4";
-        btn23.appendChild(btn3);
-        t1.appendChild(btn23);
-
-
-
-
+        var btnDelete = document.createElement("button");
+        btnDelete.innerText = "DELETE";
+        btnDelete.classList.add("btnDelete");
+        btnEditDelete.appendChild(btnDelete);
 
 
         var question = document.getElementById("question");
-        h.textContent = question.value;
+        question2.textContent = question.value;
 
         question.value = "";
         
