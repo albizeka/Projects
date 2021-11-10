@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: skyblue;
+            padding-top: 130px;
+            padding-bottom: 130px;
+
+        }
+
+        .container {
+            width: 830px;
+            height: 100vh;
+            height: 350px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            align-content: space-around;
+            margin-right: 260px;
+            margin-left: 260px;
+            background-color: yellow;
+            border: none;
+
+
+        }
+
+        #first {
+
+            font-size: 30px;
+            border: 4px green solid;
+            width: 120px;
+            height: 115px;
+            margin-right: 7px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #options {
+            width: 50px;
+            height: 30px;
+            margin: auto 0px;
+        }
+
+        #option1 {
+            font-size: 40px;
+            margin: auto 0px;
+
+
+
+        }
+
+        #option2 {
+            font-size: 40px;
+            margin: auto 0px;
+
+
+
+        }
+
+        #option3 {
+            font-size: 40px;
+            margin: auto 0px;
+
+
+
+        }
+
+        #option4 {
+            font-size: 40px;
+            margin: auto 0px;
+
+
+
+        }
+
+        #third {
+            font-size: 30px;
+            border: 4px blue solid;
+            width: 120px;
+            height: 115px;
+            margin-left: 8px;
+            margin-right: 7px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #fourth {
+            font-size: 30px;
+            margin: auto 0px;
+            margin-right: 7px;
+
+        }
+
+        #sum {
+
+            height: 33px;
+            width: 198px;
+            margin: auto 0px;
+            margin-right: 7px;
+            border: 2px lightgreen solid;
+        }
+
+        #btn1 {
+            height: 39px;
+            width: 112px;
+            margin: auto 0px;
+            color: white;
+            background-color: red;
+            border: 2px lightblue solid;
+            border-radius: 2px;
+
+        }
+
+        #btn2 {
+            height: 39px;
+            width: 112px;
+            margin: auto 0px;
+            color: white;
+            background-color: red;
+            border: 2px lightblue solid;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="first"></h1>
+        <select name="" id="options">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+
+        </select>
+        <h1 id="third"></h1>
+        <h1 id="fourth">=</h1>
+        <input type="text" id="sum">
+        <button onclick="shtyp()" id="btn1">Generate numbers</button>
+        <button onclick="shtyp2()" id="btn2">Check</button>
+
+    </div>
+
+
+</body>
+
+<script>
+
+    function shtyp() {
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+
+        var firstValue = 0;
+        var secondValue = 0;
+
+        firstValue = Math.floor(Math.random() * (numbers.length));
+        let value1 = numbers[firstValue];
+        secondValue = Math.floor(Math.random() * (numbers.length));
+        let value2 = numbers[secondValue];
+
+
+        document.getElementById("first").innerHTML = numbers[firstValue];
+        document.getElementById("third").innerHTML = numbers[secondValue];
+    };
+    function shtyp2() {
+
+        var firstValue = document.getElementById("first");
+        var secondValue = document.getElementById("third");
+        var sum = document.getElementById("sum").value;
+        firstValue.innerHTML = parseInt(firstValue.innerHTML);
+        secondValue.innerHTML = parseInt(secondValue.innerHTML);
+        var options = document.getElementById("options").value;
+
+        var result = 0;
+
+        while (options == "+") {
+            result = parseInt(firstValue.innerHTML) + parseInt(secondValue.innerHTML);
+            if (sum == result) {
+                alert("Correct");
+                break;
+            }
+            else {
+                alert("Wrong");
+                break;
+            }
+
+        }
+        while (options == "-") {
+            result = parseInt(firstValue.innerHTML) - parseInt(secondValue.innerHTML);
+            if (sum == result) {
+                alert("Correct");
+                break;
+            }
+            else {
+                alert("Wrong ");
+                break;
+            }
+
+        }
+        while (options == "*") {
+            result = parseInt(firstValue.innerHTML) * parseInt(secondValue.innerHTML)
+            if (sum == result) {
+                alert("Correct");
+                break;
+            }
+            else {
+                alert("Wrong");
+                break;
+            }
+        }
+        while (options == "/") {
+            result = parseInt(firstValue.innerHTML) / parseInt(secondValue.innerHTML)
+            if (sum == result) {
+                alert("Correct");
+                break;
+            }
+            else {
+                alert("Wrong");
+                break;
+            }
+        }
+    };
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style-to-do-list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div id="all">
+        <h1>To-do List</h1>
+        <input type="text" id="text" placeholder="I need to...">
+
+        <button id="submitButton" onclick="shtyp()">Submit</button>
+
+    </div>
+
+    <div class="toDoList">
+
+        <ul id="ul">
+
+        </ul>
+
+    </div>
+
+    <script>
+
+        const input = document.getElementById("text");
+
+        input.addEventListener("keydown", function (e) {
+
+            if (e.key === "Enter")
+                shtyp();
+
+        });
+
+
+        function shtyp() {
+            var ul = document.getElementById("ul");
+
+            var li = document.createElement("li");  // krijimi i "li".
+            var teksti = document.getElementById("text").value;
+            // var teksti = document.createTextNode(teksti);
+            var span = document.createElement("span");
+
+            span.textContent = teksti;
+            li.appendChild(span);
+
+            // li.appendChild(teksti);
+
+            ul.appendChild(li);
+
+
+            var trashIcon = document.createElement("i");
+            trashIcon.className = "fas fa-trash";
+            trashIcon.style.color = "gray";
+            trashIcon.id = "tr-icon";
+            trashIcon.addEventListener("click", function () {
+                li.remove();
+            })
+            li.appendChild(trashIcon);
+
+            var ch = document.createElement("input");
+            ch.type = "checkbox";
+            ch.id = "listCheckBox";
+            ch.value = "0";
+            // ch.checked = "1";
+            li.appendChild(ch);
+
+            var penIcon = document.createElement("i");
+            penIcon.className = "fas fa-pencil-alt";
+            penIcon.id = "penIc";
+
+            var textInput = document.createElement("input");
+            textInput.type = 'text';
+            textInput.value = span.textContent;
+            textInput.style.display = 'none';
+
+            textInput.addEventListener("keydown", function (e) {
+                if (e.key == "Enter") {     
+                    var vleraInputit = textInput.value;  
+                    span.textContent = vleraInputit;
+                    textInput.style.display = "none";
+                    span.style.display = "inline";
+
+                }
+
+            })
+
+            penIcon.addEventListener("click", function () {
+                if (textInput.style.display == 'none') {
+                    span.style.display = 'none';
+                    textInput.style.display = 'inline';
+                }
+            });
+            li.appendChild(penIcon);
+
+            li.appendChild(textInput);
+
+
+        };
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

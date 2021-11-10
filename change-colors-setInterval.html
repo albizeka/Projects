@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .container {
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        .container {
+            text-align: center;
+        }
+
+        .ardit h2 {
+            background-color: black;
+            padding: 5px 10px;
+            color: white;
+        }
+
+        .ardit button {
+
+            margin-top: 15px;
+            background-color: red;
+            border: red;
+        }
+
+        #date-and-time {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ardit">
+
+            <h2>Background color : <span id="color">White</span></h2>
+            <button onclick="changeColors()" type="button" class="btn btn-primary">Click me</button>
+
+            <h1 id="date-and-time"></h1>
+
+        </div>
+    </div>
+
+
+    </div>
+
+
+</body>
+
+<script>
+
+    var i = 0;
+
+    function changeColors() {
+
+        var colors = ["Black", "Brown", "Green", "White"];
+
+        var changeColors = document.getElementsByTagName("body")[0];
+
+        // changeColors.style.background = colors[i++]; // nese nuk e perdorim kuhstin if, per ndryshim te emrit te ngjyres, perdoret kjo metode.
+
+        changeColors.style.background = colors[i];
+
+        document.getElementById("color").innerHTML = colors[i];
+
+        i++;
+
+
+        if (i > colors.length - 1) {
+            i = 0;
+        }
+
+
+    }
+
+    addEventListener("keydown", function (e) {
+
+        if (e.key === "Enter")
+            changeColors();
+
+    })
+
+    var date_time = document.getElementById("date-and-time");
+    function time() {
+
+        let newDate = new Date();
+        let months = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
+        let date = newDate.getDate();
+        let hours = newDate.getHours();
+        let minutes = newDate.getMinutes();
+        let seconds = newDate.getSeconds();
+
+        
+        //    document.getElementById("date-and-time").innerHTML = (months) + "/" + (date) + "/" + (year) + " " + ("0" + hours).substr(-2) + ":" + ("0" + minutes).substr(-2) + ":" + ("0" + seconds).substr(-2);
+
+       date_time.textContent = (months) + "/" + (date) + "/" + (year) + " " + ("0" + hours).substr(-2) + ":" + ("0" + minutes).substr(-2) + ":" + ("0" + seconds).substr(-2);
+
+    }
+    setInterval(time, 1000);
+
+
+
+
+ /*   var i = 0;
+
+    var colors = ["White", "Black", "Brown", "Green"];
+
+
+    var y = () => {
+        var x = document.getElementsByTagName("body")[0];
+
+        x.style.background = colors[i];
+        // nese nuk e perdorim kuhstin if, per ndryshim te emrit te ngjyres, perdoret kjo metode.
+
+        document.getElementById("color").innerHTML = colors[i];
+
+        i++;
+
+        if (i > colors.length - 1) {
+            i = 0;
+        }
+
+    }
+
+
+    setInterval(y, 1000); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
