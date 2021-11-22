@@ -15,21 +15,14 @@
 
         }
 
-        td {
-            text-align: center;
-            padding-left: 17.5px;
-            padding-right: 17.5px;
-            padding-top: 4px;
-            padding-bottom: 4px;
+        th {
+            height: 27px;
+            width: 77px;
         }
 
-        th {
-            text-align: center;
-            padding-left: 17.5px;
-            padding-right: 17.5px;
-            padding-top: 4px;
-            padding-bottom: 4px;
-
+        td {
+            height: 27px;
+            width: 77px;
         }
 
         #table {
@@ -63,103 +56,96 @@
 
 <body>
 
-    <input type="text" id="inputText">
 
-    <button class="btnSearch" onclick="clickSearch()">Search</button>
-
-    <table id="table">
-        <tr id="tr1">
-            <th id="first-name"></th>
-            <th id="last-name"></th>
-            <th id="age"></th>
-        </tr>
-        <tr id="tr2">
-            <td id="td21"></td>
-            <td id="td22"></td>
-            <td id="td23"></td>
-        </tr>
-        <tr id="tr3">
-            <td id="td31"></td>
-            <td id="td32"></td>
-            <td id="td33"></td>
-        </tr>
-        <tr id="tr4">
-            <td id="td41"></td>
-            <td id="td42"></td>
-            <td id="td43"></td>
-        </tr>
-        <tr id="tr5">
-            <td id="td51"></td>
-            <td id="td52"></td>
-            <td id="td53"></td>
-        </tr>
-        <tr id="tr6">
-            <td id="td61"></td>
-            <td id="td62"></td>
-            <td id="td63"></td>
-        </tr>
-    </table>
 
 </body>
 
 
 <script>
     var myTable = [
-    { 
-        name1: "Name",
-        surname1: "Surname", 
-        age1: "Age"
-    },
-    {  
-        name2: "Agon",
-        surname2: "Qurdina", 
-        age2: "28"
-    }, 
-    { 
-        name3: "Ardit", 
-        surname3: "Qurdina", 
-        age3: "26"
-    },
-    { 
-        name4: "Etnor", 
-        surname4: "Qurdina", 
-        age4: "22" },
-    { 
-        name5: "Endrit", 
-        surname5: "Qurdina", 
-        age5: 21 
-    },
-    { 
-        name6: "Armir", 
-        surname6: "Qurdina", 
-        age6: "20"
-    }
-]
+        {
+            name: "Name",
+            surname: "Surname",
+            age: "Age"
+        },
+        {
+            name: "Agon",
+            surname: "Qurdina",
+            age: "28"
+        },
+        {
+            name: "Ardit",
+            surname: "Qurdina",
+            age: "26"
+        },
+        {
+            name: "Etnor",
+            surname: "Qurdina",
+            age: "22"
+        },
+        {
+            name: "Endrit",
+            surname: "Qurdina",
+            age: "21"
+        },
+        {
+            name: "Armir",
+            surname: "Qurdina",
+            age: "20"
+        }
+    ]
 
-    
-    document.getElementById("first-name").textContent = myTable[0].name1;
-    document.getElementById("last-name").textContent = myTable[0].surname1;
-    document.getElementById("age").textContent = myTable[0].age1;
+    var table = document.createElement("table");
+    document.body.appendChild(table);
 
-    document.getElementById("td21").textContent = myTable[1].name2;
-    document.getElementById("td22").textContent = myTable[1].surname2;
-    document.getElementById("td23").textContent = myTable[1].age2;
+    var firstRow = table.insertRow(0);
+    var firstCell = firstRow.insertCell(0);
+    var secondCell = firstRow.insertCell(1);
+    var thirdCell = firstRow.insertCell(2);
 
-    document.getElementById("td31").textContent = myTable[2].name3;
-    document.getElementById("td32").textContent = myTable[2].surname3;
-    document.getElementById("td33").textContent = myTable[2].age3;
-    
-    document.getElementById("td41").textContent = myTable[3].name4;
-    document.getElementById("td42").textContent = myTable[3].surname4;
-    document.getElementById("td43").textContent = myTable[3].age4;
+    var secondRow = table.insertRow(1);
+    var fourthCell = secondRow.insertCell(0);
+    var fifthCell = secondRow.insertCell(1);
+    var sixthCell = secondRow.insertCell(2);
 
-    document.getElementById("td51").textContent = myTable[4].name5;
-    document.getElementById("td52").textContent = myTable[4].surname5;
-    document.getElementById("td53").textContent = myTable[4].age5;
+    var thirdRow = table.insertRow(2);
+    var seventhCell = thirdRow.insertCell(0);
+    var eighthCell = thirdRow.insertCell(1);
+    var ninethCell = thirdRow.insertCell(2);
 
-    document.getElementById("td61").textContent = myTable[5].name6;
-    document.getElementById("td62").textContent = myTable[5].surname6;
-    document.getElementById("td63").textContent = myTable[5].age6;
+    var fourthRow = table.insertRow(3);
+    var tenthCell = fourthRow.insertCell(0);
+    var eleventhCell = fourthRow.insertCell(1);
+    var twelvethCell = fourthRow.insertCell(2);
+
+    var fifthRow = table.insertRow(4);
+    var thirteenthCell = fifthRow.insertCell(0);
+    var fourteenthCell = fifthRow.insertCell(1);
+    var fifteenthCell = fifthRow.insertCell(2);
+
+    var sixthRow = table.insertRow(5);
+    var sixteenthCell = sixthRow.insertCell(0);
+    var seventeenthCell = sixthRow.insertCell(1);
+    var eighteenthCell = sixthRow.insertCell(2);
+
+    firstCell.textContent = myTable[0].name;
+    secondCell.textContent = myTable[0].surname;
+    thirdCell.textContent = myTable[0].age;
+    fourthCell.textContent = myTable[1].name;
+    fifthCell.textContent = myTable[1].surname;
+    sixthCell.textContent = myTable[1].age;
+    seventhCell.textContent = myTable[2].name;
+    eighthCell.textContent = myTable[2].surname;
+    ninethCell.textContent = myTable[2].age;
+    tenthCell.textContent = myTable[3].name;
+    eleventhCell.textContent = myTable[3].surname;
+    twelvethCell.textContent = myTable[3].age;
+    thirteenthCell.textContent = myTable[4].name;
+    fourteenthCell.textContent = myTable[4].surname;
+    fifteenthCell.textContent = myTable[4].age;
+    sixteenthCell.textContent = myTable[5].name;
+    seventeenthCell.textContent = myTable[5].surname;
+    eighteenthCell.textContent = myTable[5].age;
 
 
 </script>
