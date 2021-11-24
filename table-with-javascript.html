@@ -95,58 +95,53 @@
         }
     ]
 
+
     var table = document.createElement("table");
     document.body.appendChild(table);
 
-    var firstRow = table.insertRow(0);
-    var firstCell = firstRow.insertCell(0);
-    var secondCell = firstRow.insertCell(1);
-    var thirdCell = firstRow.insertCell(2);
+    table.insertRow(0);
+    table.rows[0].insertCell(0);
 
-    var secondRow = table.insertRow(1);
-    var fourthCell = secondRow.insertCell(0);
-    var fifthCell = secondRow.insertCell(1);
-    var sixthCell = secondRow.insertCell(2);
+    table.rows[0].cells[0].textContent = "Armir";
 
-    var thirdRow = table.insertRow(2);
-    var seventhCell = thirdRow.insertCell(0);
-    var eighthCell = thirdRow.insertCell(1);
-    var ninethCell = thirdRow.insertCell(2);
+    for (let i = 0; i < 6; i++) {
+        table.insertRow(i);
+        for (let j = 0; j < 3; j++) {
+            table.rows[i].insertCell(j);
+        }
 
-    var fourthRow = table.insertRow(3);
-    var tenthCell = fourthRow.insertCell(0);
-    var eleventhCell = fourthRow.insertCell(1);
-    var twelvethCell = fourthRow.insertCell(2);
+    }
 
-    var fifthRow = table.insertRow(4);
-    var thirteenthCell = fifthRow.insertCell(0);
-    var fourteenthCell = fifthRow.insertCell(1);
-    var fifteenthCell = fifthRow.insertCell(2);
+    /*
+        table.rows[0].cells[0].textContent = myTable[0].name;
+        table.rows[0].cells[1].textContent = myTable[0].surname;
+        table.rows[0].cells[2].textContent = myTable[0].age;
+    
+        table.rows[1].cells[0].textContent = myTable[1].name;
+        table.rows[1].cells[1].textContent = myTable[1].surname;
+        table.rows[1].cells[2].textContent = myTable[1].age;
+    
+        table.rows[2].cells[0].textContent = myTable[2].name;
+        table.rows[2].cells[1].textContent = myTable[2].surname;
+        table.rows[2].cells[2].textContent = myTable[2].age;
+    
+        table.rows[3].cells[0].textContent = myTable[3].name;
+        table.rows[3].cells[1].textContent = myTable[3].surname;
+        table.rows[3].cells[2].textContent = myTable[3].age;
+    
+        table.rows[4].cells[0].textContent = myTable[4].name;
+        table.rows[4].cells[1].textContent = myTable[4].surname;
+        table.rows[4].cells[2].textContent = myTable[4].age;
+    
+        table.rows[5].cells[0].textContent = myTable[5].name;
+        table.rows[5].cells[1].textContent = myTable[5].surname;
+        table.rows[5].cells[2].textContent = myTable[5].age; */
 
-    var sixthRow = table.insertRow(5);
-    var sixteenthCell = sixthRow.insertCell(0);
-    var seventeenthCell = sixthRow.insertCell(1);
-    var eighteenthCell = sixthRow.insertCell(2);
-
-    firstCell.textContent = myTable[0].name;
-    secondCell.textContent = myTable[0].surname;
-    thirdCell.textContent = myTable[0].age;
-    fourthCell.textContent = myTable[1].name;
-    fifthCell.textContent = myTable[1].surname;
-    sixthCell.textContent = myTable[1].age;
-    seventhCell.textContent = myTable[2].name;
-    eighthCell.textContent = myTable[2].surname;
-    ninethCell.textContent = myTable[2].age;
-    tenthCell.textContent = myTable[3].name;
-    eleventhCell.textContent = myTable[3].surname;
-    twelvethCell.textContent = myTable[3].age;
-    thirteenthCell.textContent = myTable[4].name;
-    fourteenthCell.textContent = myTable[4].surname;
-    fifteenthCell.textContent = myTable[4].age;
-    sixteenthCell.textContent = myTable[5].name;
-    seventeenthCell.textContent = myTable[5].surname;
-    eighteenthCell.textContent = myTable[5].age;
-
+    for (let i = 0; i < 6; i++) {
+        table.rows[i].cells[0].textContent = myTable[i].name;
+        table.rows[i].cells[1].textContent = myTable[i].surname;
+        table.rows[i].cells[2].textContent = myTable[i].age;
+    }
 
 </script>
 
