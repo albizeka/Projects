@@ -56,7 +56,9 @@
 
 <body>
 
+    <input type="text" id="inputText">
 
+    <button class="btnSearch" onclick="clickSearch()">Search</button>
 
 </body>
 
@@ -91,28 +93,88 @@
         {
             name: "Armir",
             surname: "Qurdina",
-            age: "20"
+            age: "21"
         }
     ]
 
 
+    function createTable(listOfPeople) {
+    
     var table = document.createElement("table");
+    table.id = "table";
     document.body.appendChild(table);
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < myTable.length; i++) {
         table.insertRow(i);
         for (let j = 0; j < 3; j++) {
             table.rows[i].insertCell(j);
         }
-
-    }
-
-
-    for (let i = 0; i < 6; i++) {
         table.rows[i].cells[0].textContent = myTable[i].name;
         table.rows[i].cells[1].textContent = myTable[i].surname;
         table.rows[i].cells[2].textContent = myTable[i].age;
+
+
     }
+}
+createTable(myTable);
+
+
+function clickSearch() {
+
+    var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("inputText");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("table");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function createTable(listOfNames)
+
+
+
+    /*
+        table.rows[0].cells[0].textContent = myTable[0].name;
+        table.rows[0].cells[1].textContent = myTable[0].surname;
+        table.rows[0].cells[2].textContent = myTable[0].age;
+    
+        table.rows[1].cells[0].textContent = myTable[1].name;
+        table.rows[1].cells[1].textContent = myTable[1].surname;
+        table.rows[1].cells[2].textContent = myTable[1].age;
+    
+        table.rows[2].cells[0].textContent = myTable[2].name;
+        table.rows[2].cells[1].textContent = myTable[2].surname;
+        table.rows[2].cells[2].textContent = myTable[2].age;
+    
+        table.rows[3].cells[0].textContent = myTable[3].name;
+        table.rows[3].cells[1].textContent = myTable[3].surname;
+        table.rows[3].cells[2].textContent = myTable[3].age;
+    
+        table.rows[4].cells[0].textContent = myTable[4].name;
+        table.rows[4].cells[1].textContent = myTable[4].surname;
+        table.rows[4].cells[2].textContent = myTable[4].age;
+    
+        table.rows[5].cells[0].textContent = myTable[5].name;
+        table.rows[5].cells[1].textContent = myTable[5].surname;
+        table.rows[5].cells[2].textContent = myTable[5].age; */
+
+  /*  for (let i = 0; i < 6; i++) {
+        table.rows[i].cells[0].textContent = myTable[i].name;
+        table.rows[i].cells[1].textContent = myTable[i].surname;
+        table.rows[i].cells[2].textContent = myTable[i].age;
+    } */
 
 </script>
 
