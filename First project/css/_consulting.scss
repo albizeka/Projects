@@ -1,0 +1,93 @@
+@import "./variables";
+
+.background-fusions {
+    background-image: url("../img/ramon-salinero-vEE00Hx5d0Q-unsplash.png");
+}
+
+.background-transformation {
+    background-image: url("../img/aron-visuals-bZZp1PmHI0E-unsplash.png");
+}
+
+.background-optimisation {
+    background-image: url("../img/christopher-burns-Kj2SaNHG-hg-unsplash.png");
+}
+
+.background-gestion-de-crise {
+    background-image: url("../img/tim-mossholder-1NnP799xWDw-unsplash.png");
+}
+
+.first_section {
+    .menu {
+        @include menu1($hexColor2);
+    }
+}
+
+.second_section_consulting {
+    
+    .div-of-second-section  {
+        @include padding1();
+        @include flexBox1(flex-start, row, nowrap, stretch);
+
+        .right-part-of-div-of-second-section {
+            @include flexBox1(stretch, column, nowrap, stretch);
+            flex-direction: column;
+
+            .first-right-part-second-section {
+                margin-bottom: 30px;
+            }
+        }
+        .right-part-second-section, .first-right-part-second-section, .second-right-part-second-section {
+            margin: 0px;
+        }
+
+        .first-mutual-font-size {
+            font-size: 27px;
+        }
+
+        .second-mutual-font-size {
+            font-size: 17px;
+        }
+    }
+}
+
+.third_section_consulting {
+    background-color: $hexColor1;
+
+    .div-of-third-section {
+        @include padding1();
+        @include flexBox1(flex-start, row, nowrap, stretch);
+
+        .left-part-of-div-of-third-section, .right-part-of-div-of-third-section {
+            color: $hexColor2;
+        }
+
+        .right-part-of-div-of-third-section {
+            margin: 0px;
+        }
+    }
+}
+
+.fourth_section_consulting {
+    background-color: $hexColor2;
+
+    .div-of-fourth-section {
+        @include padding1();
+        @include flexBox1(flex-start, row, nowrap, stretch);
+    
+        .left-part-of-div-of-fourth-section {
+            color: $hexColor1;
+        }
+    
+        .right-part-of-div-of-fourth-section {
+            margin: 0px;
+        }
+    }
+}
+
+.left_div_consulting {
+    @include leftDiv($color3, 27px);
+}
+
+.right_div_consulting {
+    width: 715px;
+}

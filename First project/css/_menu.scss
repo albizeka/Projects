@@ -1,0 +1,68 @@
+@import "./variables";
+
+.div_of_exit_button {
+    width: 70%;
+    height: 30px;
+    margin: auto;
+}
+
+.exit_button {
+    font-size: 40px;
+    float: right;
+    padding-top: 10px;
+    color: $color3;
+}
+.table {
+    margin: auto;
+    width: 60%; 
+    margin-top: 55px;
+}
+
+.table-list {
+    padding-top: 45px 0px;
+
+}
+
+.table-list tr td {
+    padding-left: 0px;
+}
+
+a {
+    color: $color3;
+    text-decoration-line: none;
+
+}
+
+.languages tr td {
+    padding-left: 0px;
+    font-size: 13px;
+    font-family: Helvetica;
+    word-spacing: 8px;
+}
+
+.languages-of-menus-1-2-3-4 tr td {
+    padding-top: 305px;
+}
+
+.languages-of-menu-5 tr td {
+    padding-top: 203px;
+}
+
+.table-list {
+    list-style-type: none;
+    font-family: Helvetica;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.table-list tr td:nth-child(2) {
+    padding-left: 70px;
+}
+
+#active {
+    color: $color3;
+}
+
+#inactive {
+    color: $Inactive_Option_Color;
+}

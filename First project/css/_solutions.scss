@@ -1,0 +1,64 @@
+@import "./variables";
+
+.background-mesure {
+    background-image: url("../img/tim2-mossholder-6VI66GPUMXM-unsplash.png");
+    }
+
+.background-assessment {
+    background-image: url("../img/augustine2-wong-wjL78m4a2qM-unsplash.png");
+}
+
+.background-sante-securite {
+    background-image: url("../img/weiye-tan-thiDDoQZpRA-unsplash.png");
+}
+
+.first_section {
+    
+    .menu {
+        @include menu1($hexColor2);
+    }
+}
+
+.second_section_solutions {
+    .div-of-second-section {
+        @include padding1();
+        @include flexBox1(flex-start, row, nowrap, stretch);
+    }
+}
+
+.third_section_solutions {
+    background-color: $hexColor2;
+
+    .div-of-third-section {
+        @include padding1();
+        @include flexBox1(flex-start, column, nowrap, stretch);
+
+        .lower-div-left-and-right {
+            width: 100%; 
+            display: flex; 
+            justify-content: space-between;
+            margin-top: 110px;
+
+            .left-lower-div {
+                font-size: 17px;
+                margin: 0px;
+
+                .left-lower-div-contain {
+                    color: $color3; 
+                    text-decoration-line: none; 
+                    opacity: 50%;
+                }
+            }
+        }
+    }
+}
+
+.left_div_solutions {
+    @include leftDiv($hexColor1, 27px);
+}
+
+.right_div_solutions {
+    width: 705px;
+    font-size: 17px;
+    margin: 0px;
+}

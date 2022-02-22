@@ -1,0 +1,33 @@
+@import "./variables";
+
+.first_section {
+    
+    .menu {
+        @include menu1($hexColor2);
+    }
+}
+
+.second_section_training {
+
+    .div-of-second-section {
+        @include padding1();
+        @include flexBox1(center, row, wrap, space-between);
+
+        .content-of-div-of-second-section {
+            @include flexBox1(flex-start, row, nowrap, stretch);
+            width: 100%;
+        }
+    }
+}
+
+.left_div_training {
+    @include leftDiv($hexColor1, 27px);
+}
+
+.right_div_training {
+    width: 705px;
+    height: 100%;
+    color: $color3;
+    font-size: 17px;
+    margin: 0px;
+}
